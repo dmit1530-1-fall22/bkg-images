@@ -5,12 +5,18 @@ mauve:           #9A8C98;
 millennial pink: #C9ADA7;
 palest pink:     #F2E9E4;
 */
-
+:root {
+    --dk-navy: #22223B;
+    --md-navy: #4A4E69;
+    --mauve: #9A8C98;
+    --millennial-pink: #C9ADA7;
+    --palest-pink: #F2E9E4;
+}
 
 /* Typography & Universal Styles */
 
 body {
-    color: #22223B;
+    color: var(--dk-navy);
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -24,7 +30,7 @@ ul, li {
 }
 
 a {
-    color: #4A4E69;
+    color: var(--md-navy);
     text-decoration: none;
 }
 
@@ -38,14 +44,33 @@ a:hover {
 }
 
 /* Navigation */
-
+header {
+    background-color: var(--md-navy);
+    text-align: center;
+    padding: 1rem;
+}
 h1, a {
     color: #F2E9E4;
 }
 nav { text-transform: uppercase;}
 
 /* Hero Banner */
-
+.banner {
+    background-image: url("../img/bg/outdoor-tall.webp");
+    /* height: 400px; */
+    /* height: 50vh; */
+    height: calc(100vh - 232px);
+    min-height: 172px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--palest-pink);
+    text-align: center  ;
+    background-attachment: fixed;
+    margin-bottom: 4rem;
+}
 
 .btn {
     background-color: #C9ADA7;
@@ -58,13 +83,76 @@ nav { text-transform: uppercase;}
 }
 
 /* Cards */
+main {
+    padding: 1rem;
+}
+.cards div {
+    height: 650px;
+    border-radius: 5px;
+    background-size: cover;
+    background-position:center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+.cards p {
+    background-color: var(--md-navy);
+    color: var(--palest-pink);
+    padding: 1rem;
+}
+.cards div:first-of-type {
+    background-image: url("../img/cards/exterior-entry.webp");
+}
+.cards div:nth-of-type(2) {
+    background-image: url("../img/cards/interior-desk.webp");
+}
+.cards div:last-of-type {
+    background-image: url("../img/cards/kitchen-trinkets.webp");
+}
+
 
 
 /* Footer Styles */
 
+footer {
+    background-color: var(--mauve);
+    background-image: url(../img/leaf.svg);
+    margin-top: 2rem;
+    
+}
+footer > div {
+    padding: 1.25rem 1rem;
+}
 
+.copyright {
+    background-color: var(--dk-navy);
+    color: var(--palest-pink);
+    text-align: center;
+}
 /* Media Queries */
 
 @media screen and (min-width: 800px) {
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .banner {
+        background-image: url("../img/bg/outdoor-wide.webp");
+        height: calc(100vh - 136px);
+
+        background-position: top;
+    }
+    .flex-container {
+        display: flex;
+        justify-content: space-between;
+    }
+    .cards div {
+         /* width: 32%; */
+         width: calc((100% - 2rem) / 3);
+        
+        
+        }
 
 }
